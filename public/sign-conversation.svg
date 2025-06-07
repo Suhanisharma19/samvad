@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="600" fill="#E6FFE6"/>
+  <g transform="translate(100, 50)">
+    <!-- Woman -->
+    <path d="M200 100 C 200 50, 250 0, 300 0 C 350 0, 400 50, 400 100 L 400 300 L 200 300 Z" fill="#4CAF50"/>
+    <circle cx="300" cy="50" r="30" fill="#333"/>
+    <!-- Man -->
+    <path d="M500 100 C 500 50, 550 0, 600 0 C 650 0, 700 50, 700 100 L 700 300 L 500 300 Z" fill="#4CAF50"/>
+    <circle cx="600" cy="50" r="30" fill="#333"/>
+    <!-- Hand gestures -->
+    <g transform="translate(50, 350)">
+      <path d="M0 0 L 30 30 L 60 0 L 30 -30 Z" fill="#333"/>
+      <path d="M100 0 L 130 30 L 160 0 L 130 -30 Z" fill="#333"/>
+      <path d="M200 0 L 230 30 L 260 0 L 230 -30 Z" fill="#333"/>
+    </g>
+  </g>
+</svg> 
