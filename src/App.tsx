@@ -1,5 +1,4 @@
-import React from 'react';
-import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import About from './pages/About';
@@ -11,11 +10,10 @@ import RecordingStudio from './pages/RecordingStudio';
 import SignToSpeech from './pages/SignToSpeech';
 import Demo from './pages/Demo';
 import Footer from './components/Footer';
-import { ThemeProvider, createTheme } from '@mui/material';
+import { ThemeProvider, createTheme, GlobalStyles } from '@mui/material';
 import GestureRecognition from './components/GestureRecognition';
 import ASLTutorial from './components/ASLTutorial';
 import ASLGame from './components/ASLGame';
-import { GlobalStyles } from '@mui/material';
 import Studio from './components/Studio';
 
 const theme = createTheme({
@@ -276,7 +274,7 @@ function App() {
               <Route path="/practice" element={<GestureRecognition />} />
               <Route path="/learn" element={<ASLTutorial />} />
               <Route path="/game" element={<ASLGame />} />
-              <Route path="/studio" element={<Studio />} />
+              <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
           </main>
           <Footer />

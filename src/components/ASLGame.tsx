@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import {
   Box,
   Container,
@@ -16,6 +16,11 @@ import Webcam from 'react-webcam';
 import * as handpose from '@tensorflow-models/handpose';
 import * as fp from 'fingerpose';
 import { aslGestures } from '../utils/aslGestures';
+
+interface GameHistory {
+  score: number;
+  date: Date;
+}
 
 const GradientCard = styled(Card)(({ theme }) => ({
   background: 'linear-gradient(135deg, rgba(255,112,67,0.1) 0%, rgba(255,152,0,0.1) 100%)',
@@ -56,9 +61,9 @@ const ASLGame = () => {
   const [currentSign, setCurrentSign] = useState('');
   const [isPlaying, setIsPlaying] = useState(false);
   const [loading, setLoading] = useState(true);
-  const [model, setModel] = useState(null);
-  const [gameHistory, setGameHistory] = useState([]);
-  const webcamRef = React.useRef(null);
+  const [model, setModel] = useState<handpose.HandPose | null>(null);
+  const [gameHistory, setGameHistory] = useState<GameHistory[]>([]);
+  const webcamRef = useRef<Webcam>(null);
   const canvasRef = React.useRef(null);
 
   useEffect(() => {
@@ -90,7 +95,7 @@ const ASLGame = () => {
 
   const endGame = () => {
     setIsPlaying(false);
-    setGameHistory((prev) => [...prev, { score, date: new Date() }]);
+    setGameHistory(prev => [...prev, { score, date: new Date() }]);
   };
 
   const generateNewSign = () => {
@@ -101,16 +106,17 @@ const ASLGame = () => {
 
   const detect = async () => {
     if (
-      typeof webcamRef.current !== "undefined" &&
-      webcamRef.current !== null &&
+      model &&
+      webcamRef.current &&
+      webcamRef.current.video &&
       webcamRef.current.video.readyState === 4
     ) {
       const video = webcamRef.current.video;
-      const hand = await model.estimateHands(video);
+      const predictions = await model.estimateHands(video);
       
-      if (hand.length > 0) {
+      if (predictions.length > 0) {
         const GE = new fp.GestureEstimator(Object.values(aslGestures));
-        const gesture = await GE.estimate(hand[0].landmarks, 8);
+        const gesture = await GE.estimate(predictions[0].landmarks, 8);
         
         if (gesture.gestures.length > 0) {
           const confidence = gesture.gestures.map(
@@ -129,13 +135,15 @@ const ASLGame = () => {
   };
 
   useEffect(() => {
-    let intervalId;
-    if (isPlaying && model) {
-      intervalId = setInterval(() => {
-        detect();
-      }, 100);
+    let interval: NodeJS.Timeout;
+    if (isPlaying) {
+      interval = setInterval(detect, 100);
     }
-    return () => clearInterval(intervalId);
+    return () => {
+      if (interval) {
+        clearInterval(interval);
+      }
+    };
   }, [isPlaying, model, currentSign]);
 
   return (
