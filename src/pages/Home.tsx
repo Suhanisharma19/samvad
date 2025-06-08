@@ -16,11 +16,24 @@ import {
 } from '@mui/material';
 import { motion } from 'framer-motion';
 import AIAssistant from '../components/AIAssistant';
+import {
+  CameraAlt,
+  Translate,
+  School,
+  TouchApp,
+  Speed,
+  Psychology,
+  AccessTime,
+  PersonOutline,
+  ArrowForward,
+} from '@mui/icons-material';
 
 interface FeatureCardProps {
   title: string;
   description: string;
-  image: string;
+  steps: string[];
+  color: string;
+  icon: React.ReactNode;
   delay?: number;
 }
 
@@ -64,27 +77,123 @@ const WaveBox = styled(Box)({
   borderTopRightRadius: '50% 80px',
 });
 
-const FeatureCard = ({ title, description, image, delay = 0 }: FeatureCardProps) => (
+const IconWrapper = styled(Box)(({ theme }) => ({
+  width: '100px',
+  height: '100px',
+  borderRadius: '50%',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  margin: '0 auto 24px',
+  transition: 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
+  '& svg': {
+    fontSize: '2.5rem',
+    transition: 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
+  },
+}));
+
+const FeatureCard = ({ title, description, steps, color, icon, delay = 0 }: FeatureCardProps) => (
   <motion.div
     initial={{ opacity: 0, y: 20 }}
     animate={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.5, delay }}
   >
     <GlassCard>
-      <CardMedia
-        component="img"
-        height="240"
-        image={image}
-        alt={title}
-        sx={{ objectFit: 'cover' }}
-      />
-      <CardContent sx={{ p: 4 }}>
-        <Typography variant="h5" gutterBottom fontWeight="bold" color="#2D3748">
+      <CardContent sx={{ p: 4, textAlign: 'center' }}>
+        <IconWrapper
+          sx={{
+            background: `linear-gradient(135deg, ${color}11 0%, ${color}22 100%)`,
+            border: `2px solid ${color}33`,
+            '&:hover': {
+              background: `linear-gradient(135deg, ${color}22 0%, ${color}33 100%)`,
+              transform: 'scale(1.05) rotate(5deg)',
+              '& svg': {
+                transform: 'scale(1.1)',
+                color: color,
+              },
+            },
+          }}
+        >
+          {icon}
+        </IconWrapper>
+        <Typography 
+          variant="h5" 
+          gutterBottom 
+          fontWeight="bold" 
+          sx={{
+            mb: 2,
+            background: `linear-gradient(135deg, ${color} 0%, ${color}99 100%)`,
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+          }}
+        >
           {title}
         </Typography>
-        <Typography variant="body1" sx={{ color: '#4A5568' }}>
+        <Typography 
+          variant="body1" 
+          sx={{ 
+            color: '#4A5568',
+            mb: 4,
+            lineHeight: 1.6,
+          }}
+        >
           {description}
         </Typography>
+        <Box 
+          sx={{ 
+            mt: 2,
+            background: `linear-gradient(135deg, ${color}08 0%, ${color}11 100%)`,
+            borderRadius: '16px',
+            p: 2,
+          }}
+        >
+          {steps.map((step, index) => (
+            <Box
+              key={index}
+              sx={{
+                display: 'flex',
+                alignItems: 'center',
+                mb: index === steps.length - 1 ? 0 : 1,
+                py: 1,
+                opacity: 0.9,
+                transition: 'all 0.3s ease',
+                '&:hover': {
+                  opacity: 1,
+                  transform: 'translateX(5px)',
+                },
+              }}
+            >
+              <Box
+                sx={{
+                  width: 28,
+                  height: 28,
+                  borderRadius: '50%',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  background: `linear-gradient(135deg, ${color}22 0%, ${color}44 100%)`,
+                  color: color,
+                  fontSize: '0.9rem',
+                  fontWeight: 'bold',
+                  mr: 2,
+                  flexShrink: 0,
+                }}
+              >
+                {index + 1}
+              </Box>
+              <Typography
+                variant="body2"
+                sx={{
+                  color: '#4A5568',
+                  fontWeight: 500,
+                  textAlign: 'left',
+                }}
+              >
+                {step}
+              </Typography>
+            </Box>
+          ))}
+        </Box>
       </CardContent>
     </GlassCard>
   </motion.div>
@@ -96,19 +205,25 @@ const Home = () => {
 
   const features = [
     {
-      title: 'Real-time Translation',
-      description: 'Convert ASL signs to text instantly using advanced AI recognition',
-      image: '/images/learn-asl.jpg',
+      title: 'Capture Your Signs',
+      description: 'Our advanced AI technology captures your hand movements in real-time with high precision. Simply position your hands in front of your camera and start signing.',
+      steps: ['Position your hands', 'Start signing', 'Get instant feedback'],
+      color: '#FF7043',
+      icon: <CameraAlt fontSize="large" />,
     },
     {
-      title: 'Record & Convert',
-      description: 'Record your signs and get accurate text translations with our studio feature',
-      image: '/images/practice-mode.jpg',
+      title: 'Instant Translation',
+      description: 'Watch as your signs are instantly converted into text and speech. Our AI model recognizes ASL signs with high accuracy and provides immediate translations.',
+      steps: ['Sign detection', 'AI processing', 'Text conversion'],
+      color: '#FF9800',
+      icon: <Translate fontSize="large" />,
     },
     {
-      title: 'Learn ASL',
-      description: 'Practice and improve your signing skills with interactive tutorials',
-      image: '/images/game-mode.jpg',
+      title: 'Learn & Practice',
+      description: 'Master ASL through interactive tutorials, practice sessions, and fun games. Track your progress and earn achievements as you improve your signing skills.',
+      steps: ['Follow tutorials', 'Practice signs', 'Track progress'],
+      color: '#FFA726',
+      icon: <School fontSize="large" />,
     },
   ];
 
@@ -289,25 +404,63 @@ const Home = () => {
           position: 'relative',
           zIndex: 1,
           background: 'white',
+          '&::before': {
+            content: '""',
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            right: 0,
+            height: '100%',
+            background: 'radial-gradient(circle at top right, rgba(255,112,67,0.05) 0%, transparent 70%)',
+            pointerEvents: 'none',
+          },
+          '&::after': {
+            content: '""',
+            position: 'absolute',
+            bottom: 0,
+            left: 0,
+            right: 0,
+            height: '100%',
+            background: 'radial-gradient(circle at bottom left, rgba(255,152,0,0.05) 0%, transparent 70%)',
+            pointerEvents: 'none',
+          },
         }}
       >
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.6, ease: [0.6, -0.05, 0.01, 0.99] }}
         >
-          <Typography
-            variant="h2"
-            align="center"
-            gutterBottom
-            sx={{ 
-              mb: 6, 
-              fontWeight: 700,
-              color: '#2D3748',
-            }}
-          >
-            How It Works
-          </Typography>
+          <Box sx={{ textAlign: 'center', mb: { xs: 6, md: 10 } }}>
+            <Typography
+              variant="h2"
+              gutterBottom
+              sx={{ 
+                fontWeight: 800,
+                color: '#2D3748',
+                fontSize: { xs: '2rem', sm: '2.5rem', md: '3rem' },
+                mb: 2,
+                background: 'linear-gradient(135deg, #FF7043 0%, #FF9800 100%)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+              }}
+            >
+              How It Works
+            </Typography>
+            <Typography
+              variant="h5"
+              sx={{
+                color: '#4A5568',
+                maxWidth: '800px',
+                mx: 'auto',
+                mb: 8,
+                lineHeight: 1.6,
+                fontSize: { xs: '1rem', sm: '1.1rem', md: '1.25rem' },
+              }}
+            >
+              Transform your sign language communication with our intuitive three-step process
+            </Typography>
+          </Box>
         </motion.div>
         <Grid container spacing={4}>
           {features.map((feature, index) => (
@@ -317,86 +470,6 @@ const Home = () => {
           ))}
         </Grid>
       </Container>
-
-      {/* Call to Action */}
-      <Box
-        sx={{
-          background: 'linear-gradient(135deg, #FF7043 0%, #FF9F5A 100%)',
-          color: 'white',
-          py: { xs: 8, md: 12 },
-          position: 'relative',
-          overflow: 'hidden',
-        }}
-      >
-        <Container maxWidth="lg">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          >
-            <Typography
-              variant="h2"
-              align="center"
-              gutterBottom
-              sx={{ color: 'white', mb: 4, fontWeight: 700 }}
-            >
-              Start Converting Signs to Text
-            </Typography>
-            <Typography
-              variant="h5"
-              align="center"
-              sx={{ mb: 4, color: 'rgba(255,255,255,0.9)' }}
-            >
-              Join our community and make sign language communication effortless
-            </Typography>
-            <Box sx={{ textAlign: 'center' }}>
-              <RouterLink to="/register" style={{ textDecoration: 'none' }}>
-                <GradientButton
-                  size="large"
-                  sx={{
-                    background: 'rgba(255, 255, 255, 0.95)',
-                    color: '#FF7043',
-                    padding: '16px 40px',
-                    fontSize: '1.2rem',
-                    fontWeight: 700,
-                    borderRadius: '50px',
-                    border: '2px solid rgba(255, 255, 255, 0.1)',
-                    backdropFilter: 'blur(10px)',
-                    boxShadow: '0 10px 20px rgba(0, 0, 0, 0.1)',
-                    textTransform: 'none',
-                    position: 'relative',
-                    overflow: 'hidden',
-                    '&:before': {
-                      content: '""',
-                      position: 'absolute',
-                      top: 0,
-                      left: '-100%',
-                      width: '100%',
-                      height: '100%',
-                      background: 'linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.6), transparent)',
-                      transition: 'all 0.6s ease',
-                    },
-                    '&:hover': {
-                      background: 'rgba(255, 255, 255, 1)',
-                      transform: 'translateY(-5px)',
-                      boxShadow: '0 20px 30px rgba(0, 0, 0, 0.15)',
-                      '&:before': {
-                        left: '100%',
-                      }
-                    },
-                    '&:active': {
-                      transform: 'translateY(-2px)',
-                      boxShadow: '0 10px 20px rgba(0, 0, 0, 0.12)',
-                    }
-                  }}
-                >
-                  Get Started Now
-                </GradientButton>
-              </RouterLink>
-            </Box>
-          </motion.div>
-        </Container>
-      </Box>
 
       {/* AI Assistant */}
       <AIAssistant />

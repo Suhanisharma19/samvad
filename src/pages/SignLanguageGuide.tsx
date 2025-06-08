@@ -39,42 +39,42 @@ const basicSigns: Sign[] = [
   {
     title: 'Hello',
     description: 'Wave your open hand side to side',
-    imageUrl: '/images/hello.jpg',
+    imageUrl: 'images/hello.jpg',
   },
   {
     title: 'Thank You',
     description: 'Touch your chin with your fingertips and move your hand forward',
-    imageUrl: '/images/thankyou.jpg',
+    imageUrl: 'images/thankyou.jpg',
   },
   {
     title: 'Please',
     description: 'Rub your palm in a circular motion on your chest',
-    imageUrl: '/images/please.jpg',
+    imageUrl: 'images/please.jpg',
   },
   {
     title: 'Sorry',
     description: 'Make a fist and rub it in a circular motion on your chest',
-    imageUrl: '/images/sorry.jpg',
+    imageUrl: 'images/sorry.jpg',
   },
   {
     title: 'Yes',
     description: 'Make a fist and nod it up and down like a head nodding',
-    imageUrl: '/images/yes.jpg',
+    imageUrl: 'images/yes.jpg',
   },
   {
     title: 'No',
     description: 'Extend your index and middle fingers, then move them side to side',
-    imageUrl: '/images/no.jpg',
+    imageUrl: 'images/no.jpg',
   },
   {
     title: 'Help',
     description: 'Make a thumbs up with one hand and move it up on top of the other flat palm',
-    imageUrl: '/images/help.jpg',
+    imageUrl: 'images/help.jpg',
   },
   {
     title: 'Love',
     description: 'Cross your arms over your chest like hugging yourself',
-    imageUrl: '/images/love.jpg',
+    imageUrl: 'images/love.jpg',
   },
 ];
 
@@ -82,22 +82,22 @@ const commonPhrases: Sign[] = [
   {
     title: 'How are you?',
     description: 'Point to the person, then make a "Y" hand shape and move it forward',
-    imageUrl: '/images/howareyou.jpg',
+    imageUrl: 'images/howareyou.jpg',
   },
   {
     title: 'Nice to meet you',
     description: 'Sign "nice" by moving your flat hand down your chest, then point to the person',
-    imageUrl: '/images/Nicetomeetyou.png',
+    imageUrl: 'images/Nicetomeetyou.png',
   },
   {
     title: 'Good morning',
     description: 'Sign "good" then make a rising sun motion with your hand',
-    imageUrl: '/images/goodmorning.jpg',
+    imageUrl: 'images/goodmorning.jpg',
   },
   {
     title: 'Good night',
     description: 'Sign "good" then make a setting sun motion with your hand',
-    imageUrl: '/images/goodnight.jpg',
+    imageUrl: 'images/goodnight.jpg',
   },
 ];
 
@@ -105,22 +105,22 @@ const emergencySigns: Sign[] = [
   {
     title: 'Help Emergency',
     description: 'Cross your hands at the wrists in an "X" shape and move them up',
-    imageUrl: '/images/help.jpg',
+    imageUrl: 'images/help.jpg',
   },
   {
     title: 'Hospital',
     description: 'Make an "H" hand shape and move it in a cross pattern',
-    imageUrl: '/images/Hospital.png',
+    imageUrl: 'images/Hospital.png',
   },
   {
     title: 'Pain',
     description: 'Point your index fingers toward each other and move them together',
-    imageUrl: '/images/pain.jpg',
+    imageUrl: 'images/pain.jpg',
   },
   {
     title: 'Call 911',
     description: 'Make the number "9-1-1" signs followed by a phone call motion',
-    imageUrl: '/images/help.jpg',
+    imageUrl: 'images/help.jpg',
   },
 ];
 
@@ -142,32 +142,32 @@ const categories: Category[] = [
     title: 'Alphabet',
     content: 'Learn to sign the letters A-Z using American Sign Language (ASL).',
     signs: [
-      { letter: 'A', description: 'Make a fist with thumb alongside', imageUrl: '/images/A.jpg' },
-      { letter: 'B', description: 'Hold your hand up with fingers straight and thumb tucked across palm', imageUrl: '/images/B.png' },
-      { letter: 'C', description: 'Curve your hand into a C shape', imageUrl: '/images/C.jpg' },
-      { letter: 'D', description: 'Make "O" with index finger pointing up', imageUrl: '/images/D.jpg' },
-      { letter: 'E', description: 'Curl all fingers into palm', imageUrl: '/images/E.jpg' },
-      { letter: 'F', description: 'Touch thumb to index finger, other fingers up', imageUrl: '/images/F.jpg' },
-      { letter: 'G', description: 'Point index finger sideways, thumb and fingers closed', imageUrl: '/images/G.jpg' },
-      { letter: 'H', description: 'Index and middle fingers together pointing sideways', imageUrl: '/images/H.jpg' },
-      { letter: 'I', description: 'Make a fist with pinky finger up', imageUrl: '/images/I.jpg' },
-      { letter: 'J', description: 'Make "I" and draw a J in the air', imageUrl: '/images/J.jpg' },
-      { letter: 'K', description: 'Index finger up, middle finger angled from thumb', imageUrl: '/images/K.jpg' },
-      { letter: 'L', description: 'Make "L" shape with thumb and index finger', imageUrl: '/images/L.jpg' },
-      { letter: 'M', description: 'Place thumb between last three fingers', imageUrl: '/images/M.jpg' },
-      { letter: 'N', description: 'Place thumb between last two fingers', imageUrl: '/images/N.jpg' },
-      { letter: 'O', description: 'Form a circle with all fingers', imageUrl: '/images/O.jpg' },
-      { letter: 'P', description: 'Point middle finger down, thumb and index touching', imageUrl: '/images/P.png' },
-      { letter: 'Q', description: 'Point index finger down, thumb and pinky out', imageUrl: '/images/Q.png' },
-      { letter: 'R', description: 'Cross middle finger over index finger', imageUrl: '/images/R.jpg' },
-      { letter: 'S', description: 'Make a fist with thumb over fingers', imageUrl: '/images/S.jpg' },
-      { letter: 'T', description: 'Make a fist with thumb between index and middle fingers', imageUrl: '/images/T.jpg' },
-      { letter: 'U', description: 'Hold up index and middle fingers together', imageUrl: '/images/U.jpg' },
-      { letter: 'V', description: 'Make peace sign with index and middle fingers', imageUrl: '/images/v.jpg' },
-      { letter: 'W', description: 'Hold up three fingers (index, middle, ring)', imageUrl: '/images/W.jpg' },
-      { letter: 'X', description: 'Make a hook with index finger', imageUrl: '/images/X.jpg' },
-      { letter: 'Y', description: 'Extend thumb and pinky, other fingers closed', imageUrl: '/images/Y.jpg' },
-      { letter: 'Z', description: 'Draw Z in air with index finger', imageUrl: '/images/Z.jpg' }
+      { letter: 'A', description: 'Make a fist with thumb alongside', imageUrl: 'images/A.jpg' },
+      { letter: 'B', description: 'Hold your hand up with fingers straight and thumb tucked across palm', imageUrl: 'images/B.png' },
+      { letter: 'C', description: 'Curve your hand into a C shape', imageUrl: 'images/C.jpg' },
+      { letter: 'D', description: 'Make "O" with index finger pointing up', imageUrl: 'images/D.jpg' },
+      { letter: 'E', description: 'Curl all fingers into palm', imageUrl: 'images/E.jpg' },
+      { letter: 'F', description: 'Touch thumb to index finger, other fingers up', imageUrl: 'images/F.jpg' },
+      { letter: 'G', description: 'Point index finger sideways, thumb and fingers closed', imageUrl: 'images/G.jpg' },
+      { letter: 'H', description: 'Index and middle fingers together pointing sideways', imageUrl: 'images/H.jpg' },
+      { letter: 'I', description: 'Make a fist with pinky finger up', imageUrl: 'images/I.jpg' },
+      { letter: 'J', description: 'Make "I" and draw a J in the air', imageUrl: 'images/J.jpg' },
+      { letter: 'K', description: 'Index finger up, middle finger angled from thumb', imageUrl: 'images/K.jpg' },
+      { letter: 'L', description: 'Make "L" shape with thumb and index finger', imageUrl: 'images/L.jpg' },
+      { letter: 'M', description: 'Place thumb between last three fingers', imageUrl: 'images/M.jpg' },
+      { letter: 'N', description: 'Place thumb between last two fingers', imageUrl: 'images/N.jpg' },
+      { letter: 'O', description: 'Form a circle with all fingers', imageUrl: 'images/O.jpg' },
+      { letter: 'P', description: 'Point middle finger down, thumb and index touching', imageUrl: 'images/P.png' },
+      { letter: 'Q', description: 'Point index finger down, thumb and pinky out', imageUrl: 'images/Q.png' },
+      { letter: 'R', description: 'Cross middle finger over index finger', imageUrl: 'images/R.jpg' },
+      { letter: 'S', description: 'Make a fist with thumb over fingers', imageUrl: 'images/S.jpg' },
+      { letter: 'T', description: 'Make a fist with thumb between index and middle fingers', imageUrl: 'images/T.jpg' },
+      { letter: 'U', description: 'Hold up index and middle fingers together', imageUrl: 'images/U.jpg' },
+      { letter: 'V', description: 'Make peace sign with index and middle fingers', imageUrl: 'images/v.jpg' },
+      { letter: 'W', description: 'Hold up three fingers (index, middle, ring)', imageUrl: 'images/W.jpg' },
+      { letter: 'X', description: 'Make a hook with index finger', imageUrl: 'images/X.jpg' },
+      { letter: 'Y', description: 'Extend thumb and pinky, other fingers closed', imageUrl: 'images/Y.jpg' },
+      { letter: 'Z', description: 'Draw Z in air with index finger', imageUrl: 'images/Z.jpg' }
     ],
   },
   {
@@ -177,52 +177,52 @@ const categories: Category[] = [
       { 
         number: '0', 
         description: 'Make a closed hand shape like the letter "O", all fingers curved to touch the thumb', 
-        imageUrl: '/images/0.jpg' 
+        imageUrl: 'images/0.jpg' 
       },
       { 
         number: '1', 
         description: 'Point index finger up, other fingers closed in a fist', 
-        imageUrl: '/images/1.jpg' 
+        imageUrl: 'images/1.jpg' 
       },
       { 
         number: '2', 
         description: 'Hold up index and middle fingers in a "V" shape, palm facing forward', 
-        imageUrl: '/images/2.jpg' 
+        imageUrl: 'images/2.jpg' 
       },
       { 
         number: '3', 
         description: 'Hold up thumb, index, and middle fingers, other fingers down', 
-        imageUrl: '/images/3.jpg' 
+        imageUrl: 'images/3.jpg' 
       },
       { 
         number: '4', 
         description: 'Hold up four fingers (except thumb) straight up, palm facing forward', 
-        imageUrl: '/images/4.jpg' 
+        imageUrl: 'images/4.jpg' 
       },
       { 
         number: '5', 
         description: 'Open hand with all five fingers spread, palm facing forward', 
-        imageUrl: '/images/5.jpg' 
+        imageUrl: 'images/5.jpg' 
       },
       { 
         number: '6', 
         description: 'Make "3" sign and extend pinky finger, thumb touches palm', 
-        imageUrl: '/images/6.jpg' 
+        imageUrl: 'images/6.jpg' 
       },
       { 
         number: '7', 
         description: 'Touch thumb to palm, hold up index, middle, ring, and pinky fingers', 
-        imageUrl: '/images/7.jpg' 
+        imageUrl: 'images/7.jpg' 
       },
       { 
         number: '8', 
         description: 'Hold up thumb, index, and middle fingers in a gun shape, then extend ring and pinky', 
-        imageUrl: '/images/8.jpg' 
+        imageUrl: 'images/8.jpg' 
       },
       { 
         number: '9', 
         description: 'Make "F" handshape by touching index finger and thumb, other fingers straight', 
-        imageUrl: '/images/9.jpg' 
+        imageUrl: 'images/9.jpg' 
       }
     ],
   },
@@ -240,18 +240,18 @@ const categories: Category[] = [
     title: 'Emotions',
     content: 'Express feelings and emotions in sign language.',
     signs: [
-      { emotion: 'Happy', description: 'Brush your flat hand up your chest and face', imageUrl: '/images/happy.jpg' },
-      { emotion: 'Sad', description: 'Drag your fingers down from your eyes like tears', imageUrl: '/images/sad.jpg' },
-      { emotion: 'Angry', description: 'Make claws with both hands in front of your face', imageUrl: '/images/angry.jpg' },
+      { emotion: 'Happy', description: 'Brush your flat hand up your chest and face', imageUrl: 'images/happy.jpg' },
+      { emotion: 'Sad', description: 'Drag your fingers down from your eyes like tears', imageUrl: 'images/sad.jpg' },
+      { emotion: 'Angry', description: 'Make claws with both hands in front of your face', imageUrl: 'images/angry.jpg' },
     ],
   },
   {
     title: 'Time & Calendar',
     content: 'Learn to sign days, months, and time-related concepts.',
     signs: [
-      { word: 'Today', description: 'Make a "T" hand shape and move it down', imageUrl: '/images/today.jpg' },
-      { word: 'Tomorrow', description: 'Make a "T" hand shape and move it forward', imageUrl: '/images/tomorrow.jpg' },
-      { word: 'Yesterday', description: 'Make a "Y" hand shape and move it backward', imageUrl: '/images/yesterday.jpg' },
+      { word: 'Today', description: 'Make a "T" hand shape and move it down', imageUrl: 'images/today.jpg' },
+      { word: 'Tomorrow', description: 'Make a "T" hand shape and move it forward', imageUrl: 'images/tomorrow.jpg' },
+      { word: 'Yesterday', description: 'Make a "Y" hand shape and move it backward', imageUrl: 'images/yesterday.jpg' },
     ],
   },
 ];

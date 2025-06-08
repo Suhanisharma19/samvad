@@ -15,6 +15,7 @@ import GestureRecognition from './components/GestureRecognition';
 import ASLTutorial from './components/ASLTutorial';
 import ASLGame from './components/ASLGame';
 import Studio from './components/Studio';
+import Blog from './pages/Blog';
 
 const theme = createTheme({
   palette: {
@@ -274,6 +275,7 @@ function App() {
               <Route path="/practice" element={<GestureRecognition />} />
               <Route path="/learn" element={<ASLTutorial />} />
               <Route path="/game" element={<ASLGame />} />
+              <Route path="/blog" element={<Blog />} />
               <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
           </main>
