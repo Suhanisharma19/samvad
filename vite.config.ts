@@ -5,7 +5,7 @@ import react from '@vitejs/plugin-react'
 // For GitHub Pages deployment, set base: '/samvad/'.
 export default defineConfig({
   plugins: [react()],
-  // base: '/samvad/', // <-- Comment out or remove this line for Vercel!
+  // base: '/samvad/', // <-- Uncomment and set this for GitHub Pages. Keep commented for Vercel!
   server: {
     port: 3000,
   },
