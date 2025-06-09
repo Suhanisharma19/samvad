@@ -69,42 +69,42 @@ const basicSigns: Sign[] = [
   {
     title: 'Hello',
     description: 'Wave your open hand side to side',
-    imageUrl: 'images/hello.jpg',
+    imageUrl: '/images/hello.jpg',
   },
   {
     title: 'Thank You',
     description: 'Touch your chin with your fingertips and move your hand forward',
-    imageUrl: 'images/thankyou.jpg',
+    imageUrl: '/images/thankyou.jpg',
   },
   {
     title: 'Please',
     description: 'Rub your palm in a circular motion on your chest',
-    imageUrl: 'images/please.jpg',
+    imageUrl: '/images/please.jpg',
   },
   {
     title: 'Sorry',
     description: 'Make a fist and rub it in a circular motion on your chest',
-    imageUrl: 'images/sorry.jpg',
+    imageUrl: '/images/sorry.jpg',
   },
   {
     title: 'Yes',
     description: 'Make a fist and nod it up and down like a head nodding',
-    imageUrl: 'images/yes.jpg',
+    imageUrl: '/images/yes.jpg',
   },
   {
     title: 'No',
     description: 'Extend your index and middle fingers, then move them side to side',
-    imageUrl: 'images/no.jpg',
+    imageUrl: '/images/no.jpg',
   },
   {
     title: 'Help',
     description: 'Make a thumbs up with one hand and move it up on top of the other flat palm',
-    imageUrl: 'images/help.jpg',
+    imageUrl: '/images/help.jpg',
   },
   {
     title: 'Love',
     description: 'Cross your arms over your chest like hugging yourself',
-    imageUrl: 'images/love.jpg',
+    imageUrl: '/images/love.jpg',
   },
 ];
 
@@ -112,42 +112,42 @@ const alphabetSigns: Sign[] = [
   { 
     title: 'A', 
     description: 'Make a fist with thumb alongside', 
-    imageUrl: 'images/A.jpg' 
+    imageUrl: '/images/A.jpg' 
   },
   { 
     title: 'B', 
     description: 'Hold your hand up with fingers straight and thumb tucked across palm', 
-    imageUrl: 'images/B.png' 
+    imageUrl: '/images/B.png' 
   },
   { 
     title: 'C', 
     description: 'Curve your hand into a C shape', 
-    imageUrl: 'images/C.jpg' 
+    imageUrl: '/images/C.jpg' 
   },
   { 
     title: 'D', 
     description: 'Make "O" with index finger pointing up', 
-    imageUrl: 'images/D.jpg' 
+    imageUrl: '/images/D.jpg' 
   },
   { 
     title: 'E', 
     description: 'Curl all fingers into palm', 
-    imageUrl: 'images/E.jpg' 
+    imageUrl: '/images/E.jpg' 
   },
   { 
     title: 'F', 
     description: 'Touch thumb to index finger, other fingers up', 
-    imageUrl: 'images/F.jpg' 
+    imageUrl: '/images/F.jpg' 
   },
   { 
     title: 'G', 
     description: 'Point index finger sideways, thumb and fingers closed', 
-    imageUrl: 'images/G.jpg' 
+    imageUrl: '/images/G.jpg' 
   },
   { 
     title: 'H', 
     description: 'Index and middle fingers together pointing sideways', 
-    imageUrl: 'images/H.jpg' 
+    imageUrl: '/images/H.jpg' 
   }
 ];
 
@@ -155,22 +155,22 @@ const commonPhrasesSigns: Sign[] = [
   { 
     title: 'How are you?', 
     description: 'Point to the person, then make a "Y" hand shape and move it forward', 
-    imageUrl: 'images/howareyou.jpg' 
+    imageUrl: '/images/howareyou.jpg' 
   },
   { 
     title: 'Nice to meet you', 
     description: 'Sign "nice" by moving your flat hand down your chest, then point to the person', 
-    imageUrl: 'images/Nicetomeetyou.png' 
+    imageUrl: '/images/Nicetomeetyou.png' 
   },
   { 
     title: 'Good morning', 
     description: 'Sign "good" then make a rising sun motion with your hand', 
-    imageUrl: 'images/goodmorning.jpg' 
+    imageUrl: '/images/goodmorning.jpg' 
   },
   { 
     title: 'Good night', 
     description: 'Sign "good" then make a setting sun motion with your hand', 
-    imageUrl: 'images/goodnight.jpg' 
+    imageUrl: '/images/goodnight.jpg' 
   }
 ];
 
@@ -178,32 +178,32 @@ const numbersSigns: Sign[] = [
   { 
     title: '0', 
     description: 'Make a closed hand shape like the letter "O", all fingers curved to touch the thumb', 
-    imageUrl: 'images/0.jpg' 
+    imageUrl: '/images/0.jpg' 
   },
   { 
     title: '1', 
     description: 'Point index finger up, other fingers closed in a fist', 
-    imageUrl: 'images/1.jpg' 
+    imageUrl: '/images/1.jpg' 
   },
   { 
     title: '2', 
     description: 'Hold up index and middle fingers in a "V" shape, palm facing forward', 
-    imageUrl: 'images/2.jpg' 
+    imageUrl: '/images/2.jpg' 
   },
   { 
     title: '3', 
     description: 'Hold up thumb, index, and middle fingers, other fingers down', 
-    imageUrl: 'images/3.jpg' 
+    imageUrl: '/images/3.jpg' 
   },
   { 
     title: '4', 
     description: 'Hold up four fingers (except thumb) straight up, palm facing forward', 
-    imageUrl: 'images/4.jpg' 
+    imageUrl: '/images/4.jpg' 
   },
   { 
     title: '5', 
     description: 'Open hand with all five fingers spread, palm facing forward', 
-    imageUrl: 'images/5.jpg' 
+    imageUrl: '/images/5.jpg' 
   }
 ];
 
