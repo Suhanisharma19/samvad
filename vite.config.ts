@@ -5,7 +5,7 @@ import react from '@vitejs/plugin-react'
 // Example: base: '/samvad/'
 export default defineConfig({
   plugins: [react()],
-  base: '/samvad/',
+  base: './',
   server: {
     port: 3000,
   },
